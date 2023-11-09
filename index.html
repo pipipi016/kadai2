@@ -37,16 +37,15 @@
             );
 
             // GeoJSONレイヤーを作成　
-            let name=layer.feature.properties.名称
-            fetch('./p27-13_29.geojson') // GeoJSONを非同期読み込み
+            fetch('./p27-13_29.geojson') 
                 .then((res) => res.json())
                 .then((json) => {
                     // GeoJSONレイヤーを作成
                     L.geoJSON(json)
-                         .bindPopup((layer) => name) 
-                        //.bindPopup((layer) => layer.feature.properties.名称) 
-                        //.addTo(map);
-                        //.bindPopup((layer) => layer.feature.properties.所在地)
+                        .bindPopup((layer) => layer.feature.properties.名称) 
+                        .addTo(map);
+                    L.geoJSON(json)
+                        .bindPopup((layer) => layer.feature.properties.所在地) 
                         .addTo(map);
                 });
         </script>
