@@ -42,7 +42,7 @@
                 .then((json) => {
                     // GeoJSONレイヤーを作成
                     L.geoJSON(json)
-                        .bindPopup((layer) => layer.feature.properties.名称,layer.feature.properties.所在地) 
+                        .bindPopup((layer) => layer.feature.properties.名称.所在地) 
                         .addTo(map);
                         //.bindPopup((layer) => layer.feature.properties.所在地) 
                         //.addTo(map);
